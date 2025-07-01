@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pair Code Viewer</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 40px; }
+    h1 { color: #333; }
+    img { max-width: 300px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>PaPair Code Viewer</h1>
+  <p>QR Code:</p>
+  <img src="qr.png" alt="QR Code" />
+
+  <p><strong>Pair Code:</strong></p>
+  <pre id="code">Loading...</pre>
+
+  <script>
+    fetch('/pair-code')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('code').textContent = data.code;
+      });
+  </script>
+</body>
+</html>
