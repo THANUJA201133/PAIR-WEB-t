@@ -1,0 +1,19 @@
+const QRCode = require('qrcode');
+const fs = require('fs');
+
+// QR data (කියවිය හැකි string එකක්)
+const qrText = 'https://wa.me/940702509233';
+
+// QR image එක save වෙන path එක
+const outputPath = './public/qr.png';
+
+// QR code එක PNG එකක් ලෙස save කරන්න
+QRCode.toFile(outputPath, qrText, {
+  color: {
+    dark: '#000000',
+    light: '#FFFFFF'
+  }
+}, function (err) {
+  if (err) throw err;
+  console.log('QR code saved as qr.png');
+});
