@@ -1,0 +1,9 @@
+const fs = require('fs');
+
+// ඔබේ pair code එක මෙතන දාන්න
+const pairCode = '123-456';
+
+// file එකට ලියන්න
+fs.writeFileSync('./public/pair-code.txt', pairCode, 'utf8');
+
+console.log('Pair code saved to pair-code.txt');
